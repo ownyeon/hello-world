@@ -125,7 +125,7 @@ export type State = {
     formData: FormData,
   ) {
     try {
-      await signIn('credentials', Object.fromEntries(formData));
+      await signIn('credentials', formData);
     } catch (error) {
       if ((error as Error).message.includes('CredentialsSignin')) {
         return 'CredentialsSignin';
